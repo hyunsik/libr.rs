@@ -36,6 +36,39 @@ impl ::std::default::Default for R_long_vec_hdr_t {
 
 pub type SEXPTYPE = ::libc::c_uint;
 
+pub const NILSXP    : SEXPTYPE = 0;   /* nil = NULL */
+pub const SYMSXP    : SEXPTYPE = 1;   /* symbols */
+pub const LISTSXP   : SEXPTYPE = 2;   /* lists of dotted pairs */
+pub const CLOSXP    : SEXPTYPE = 3;   /* closures */
+pub const ENVSXP    : SEXPTYPE = 4;   /* environments */
+pub const PROMSXP   : SEXPTYPE = 5;   /* promises: [un]evaluated closure arguments */
+pub const LANGSXP   : SEXPTYPE = 6;   /* language constructs (special lists) */
+pub const SPECIALSXP: SEXPTYPE = 7;   /* special forms */
+pub const BUILTINSXP: SEXPTYPE = 8;   /* builtin non-special forms */
+pub const CHARSXP   : SEXPTYPE = 9;   /* "scalar" string type (internal only)*/
+pub const LGLSXP    : SEXPTYPE = 10;  /* logical vectors */
+/* 11 and 12 were factors and ordered factors in the 1990s */
+pub const INTSXP    : SEXPTYPE = 13;  /* integer vectors */
+pub const REALSXP   : SEXPTYPE = 14;  /* real variables */
+pub const CPLXSXP   : SEXPTYPE = 15;  /* complex variables */
+pub const STRSXP    : SEXPTYPE = 16;  /* string vectors */
+pub const DOTSXP    : SEXPTYPE = 17;  /* dot-dot-dot object */
+pub const ANYSXP    : SEXPTYPE = 18;  /* make "any" args work. Used in specifying types for symbol registration to mean anything is okay  */
+pub const VECSXP    : SEXPTYPE = 19;  /* generic vectors */
+pub const EXPRSXP   : SEXPTYPE = 20;  /* expressions vectors */
+pub const BCODESXP  : SEXPTYPE = 21;  /* byte code */
+pub const EXTPTRSXP : SEXPTYPE = 22;  /* external pointer */
+pub const WEAKREFSXP: SEXPTYPE = 23;  /* weak reference */
+pub const RAWSXP    : SEXPTYPE = 24;  /* raw bytes */
+pub const S4SXP     : SEXPTYPE = 25;  /* S4, non-vector */
+
+/* used for detecting PROTECT issues in memory.c */
+pub const NEWSXP    : SEXPTYPE = 30;  /* fresh node created in new page */
+pub const FREESXP   : SEXPTYPE = 31;  /* node released by GC */
+
+pub const FUNSXP    : SEXPTYPE = 99;  /* Closure or Builtin or Special */
+
+
 #[allow(non_camel_case_types)]
 pub enum Struct_SEXPREC { }
 pub type SEXP = *mut Struct_SEXPREC;
