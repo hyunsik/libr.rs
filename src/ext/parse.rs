@@ -1,6 +1,6 @@
 use super::super::internals::SEXP;
 #[repr(C)]
-#[derive(Copy, Clone, Debug)]
+#[derive(Copy, Clone, Debug, PartialEq)]
 pub enum ParseStatus {
     PARSE_NULL = 0,
     PARSE_OK,
