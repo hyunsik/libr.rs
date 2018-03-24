@@ -1,3 +1,4 @@
+#![allow(non_camel_case_types)]
 use super::super::internals::SEXP;
 #[repr(C)]
 #[derive(Copy, Clone, Debug, PartialEq)]

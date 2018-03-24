@@ -1,3 +1,4 @@
+#![allow(non_camel_case_types)]
 //! R_ext/RStartup.h
 //!
 //! C functions to be called from alternative front-ends.
